@@ -148,7 +148,11 @@ function createScene() {
     // console.log("working");
     try {
       noArmCap[0].setEnabled(true);
+    } catch (err) {}
+    try {
       arm2D[0].setEnabled(false);
+    } catch (err) {}
+    try {
       arm4D[0].setEnabled(false);
     } catch (err) {}
   });
