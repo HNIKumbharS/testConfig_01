@@ -1,4 +1,3 @@
-///<reference path="./vendor/babylon.d.ts" />
 //console.log('Hellow world!!!');
 
 // get our canvas
@@ -44,22 +43,25 @@ function createScene() {
   );
   camera.setPosition(new BABYLON.Vector3(0, 90, 150));
   camera.upperRadiusLimit = 200;
-  camera.lowerRadiusLimit = 50;
+  camera.lowerRadiusLimit = 90;
   camera.upperBetaLimit = Math.PI / 1.5;
   camera.lowerBetaLimit = 0;
   //camera.upperAlphaLimit = Math.PI;
   //camera.lowerAlphaLimit = Math.PI/2;
   camera.attachControl(canvas, true);
 
-  beigeSeat = new BABYLON.Texture("assets/natural_jute.jpg", scene);
+  beigeSeat = new BABYLON.Texture("assets/fabric.jpg", scene);
+
+  beigeSeat.uScale = 4.0;
+  beigeSeat.vScale = 4.0;
 
   var hdrTexture = BABYLON.CubeTexture.CreateFromPrefilteredData(
-    "./assets/sky.env",
+    "./assets/environment.env",
     scene
   );
 
   scene.environmentTexture = hdrTexture;
-  scene.environmentIntensity = 0.5;
+  scene.environmentIntensity = 0.85;
 
   const arm2dButton = document.getElementById("2D-chair");
   const arm4dButton = document.getElementById("4D-chair");
